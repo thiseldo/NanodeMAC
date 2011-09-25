@@ -27,7 +27,6 @@
 
 #include "NanodeMAC.h"
 #include <inttypes.h>
-#include <wprogram.h>
 
 #define D7_ON  (1<<7)
 #define D7_OFF (~D7_ON)
