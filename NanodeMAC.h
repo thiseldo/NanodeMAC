@@ -6,8 +6,11 @@
 #ifndef _NANODEMAC_LIB_H
 #define _NANODEMAC_LIB_H
 
-#include <inttypes.h>
+#if (ARDUINO >= 100)
+#include <Arduino.h>
+#else
 #include <WProgram.h>
+#endif
 
 class NanodeMAC {
   private:
