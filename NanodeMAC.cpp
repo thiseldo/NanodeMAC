@@ -118,6 +118,9 @@ inline bool NanodeMAC::unio_readBit()
 
 NanodeMAC::NanodeMAC( byte *mac_address ) {
 
+  // Turn off Interrupts while we read the mac address
+  noInterrupts();
+
   // standby
   unio_standby();
   
@@ -139,6 +142,9 @@ NanodeMAC::NanodeMAC( byte *mac_address ) {
   // back to standby
   unio_standby();
   
+  // Re-enable interrupts
+  interrupts();
+
 }
   
  
