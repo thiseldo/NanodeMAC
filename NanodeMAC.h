@@ -17,7 +17,7 @@ class NanodeMAC {
 	void unio_standby();
 	void unio_start_header();
 	void unio_sendByte(byte data);
-	byte unio_readBytes(byte *addr, unsigned int length);
+	void unio_readBytes(byte *addr, int length);
 	inline bool unio_readBit();
   public:
 	NanodeMAC( byte *macaddr );

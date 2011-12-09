@@ -84,10 +84,11 @@ void NanodeMAC::unio_sendByte(byte data) {
   // MAK
   BIT1;
   // SAK?
-  bool sak = unio_readBit();
+  //bool sak = unio_readBit();
+  unio_readBit();
 }
 
-byte NanodeMAC::unio_readBytes(byte *addr, unsigned int length) {
+void NanodeMAC::unio_readBytes(byte *addr, int length) {
   for (int i=0; i<length; i++) {
     
     byte data = 0;
@@ -100,7 +101,8 @@ byte NanodeMAC::unio_readBytes(byte *addr, unsigned int length) {
     } else {
       BIT1; // MAK
     }
-    bool sak = unio_readBit();
+    //bool sak = unio_readBit();
+    unio_readBit();
     addr[i] = data;
   }
 }
